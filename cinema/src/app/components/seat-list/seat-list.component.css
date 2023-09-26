@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+.total-price {
+    float: right;
+  }
+  .spacer {
+    margin: 0 8px;
+  }
+  

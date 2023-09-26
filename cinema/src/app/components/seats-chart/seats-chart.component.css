@@ -1,0 +1,33 @@
+.seat-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+  
+.seat {
+  width: 30px;
+  height: 30px;
+  background-color: #AB81CD; 
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.vip {
+  background-color: #654597; 
+}
+
+.unavailable {
+  background-color: #ccc; 
+  pointer-events: none; 
+}
+
+.chosen {
+  background-color: #1384db;
+}
+
+mat-card-title {
+  margin: 5px auto auto auto;
+}

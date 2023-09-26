@@ -1,0 +1,6 @@
+.movie-carousel{
+    width: 35%; 
+    margin: 20px auto auto auto; 
+    overflow: hidden;
+    position: relative;    
+}

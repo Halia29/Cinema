@@ -1,0 +1,8 @@
+<navigation-bar></navigation-bar>
+
+<mat-card purpleShadow>
+    <mat-card-title boldPurple14px>Transaction was completed successfully!</mat-card-title>
+    <mat-card-header normalPurple14px *ngIf = "change > 0">Your change is {{change}} UAH</mat-card-header>
+    <mat-card-header normalPurple14px *ngIf = "change === 0">Tickets were successfully purchased</mat-card-header>
+    <button color="primary" mat-raised-button goHome>Ok!</button>
+</mat-card>

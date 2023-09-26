@@ -1,0 +1,32 @@
+<div class="card-container">
+    <ng-container *ngFor="let movie of movies">
+      <mat-card class="movie-card" purpleShadow>
+        <mat-grid-list cols="1" rowHeight="3rem">
+          <mat-grid-tile rowspan="9">
+            <app-image-display [imageUrl]="movie.verticalImageUrl" [goToSessions]="movie.title"></app-image-display>
+          </mat-grid-tile>
+          <mat-grid-tile rowspan="1">
+              <div class="title" boldPurple14px>{{ movie.title }}</div>            
+          </mat-grid-tile>
+          <mat-grid-tile rowspan="1">
+            <div class="main-text" normalPurple14px>Showing till {{ movie.showingTillDate | dateFormat}}</div>
+          </mat-grid-tile>
+          
+          <mat-grid-tile rowspan="1">
+            <div horizontal-separator></div>
+          </mat-grid-tile>
+          <mat-grid-tile rowspan="3">
+            <div class="main-text" normalPurple14px>{{ movie.description }}</div>
+          </mat-grid-tile>
+          <mat-grid-tile rowspan="1">
+            <div>
+              <button color="primary" [goToSessions] = "movie.title" mat-raised-button>
+                <mat-icon>arrow_forward</mat-icon>
+              </button>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </ng-container>
+  </div>
+  

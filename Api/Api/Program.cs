@@ -1,3 +1,4 @@
+using Api.Services;
 using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,8 @@ builder.Services.AddCors(options =>
 			   .AllowAnyMethod();
 	});
 });
+
+builder.Services.AddSingleton<IMovieService, MovieService>();
 
 var app = builder.Build();
 

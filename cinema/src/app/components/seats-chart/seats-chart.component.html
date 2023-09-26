@@ -1,0 +1,31 @@
+<mat-grid-list [cols]="selectedSeats.length > 0 ? 3 : 2" rowHeight="6rem">
+    <mat-grid-tile colspan="2" rowspan="4">
+        <div class="seat-list">
+            <div *ngFor="let seatNum of seats">
+                <div *ngFor="let seat of session.seats | filterBySeat: seatNum" 
+                    class="seat" 
+                    [ngClass]="{ 
+                        'vip': seat.isVIP, 
+                        'unavailable': !seat.isAvailable ,
+                        'chosen': selectedSeats.includes(seat)
+                    }"
+                    disabled="!seat.isAvailable"
+                    (click)="hasChosenSeat(seat.row, seat.seat)"></div>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="selectedSeats.length > 0" colspan="1" rowspan="3" normalPurple14px>
+        <mat-card>
+            <mat-card-title>Your tickets:</mat-card-title>
+            <mat-card-content>
+                <seat-list [seatsByRow]="selectedSeats | orderSeatsByRows"></seat-list>
+            <button color="primary" (click)="unselectAllSeats()" mat-icon-button><mat-icon>delete</mat-icon></button>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>  
+    <mat-grid-tile *ngIf="selectedSeats.length > 0" colspan="1" rowspan="1">
+        <button color="primary" (click)="buyTickets()" mat-raised-button>Buy tickets!</button>
+    </mat-grid-tile> 
+    
+    
+</mat-grid-list>

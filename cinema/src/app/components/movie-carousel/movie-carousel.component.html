@@ -1,0 +1,18 @@
+<div class="movie-carousel" purpleShadow>
+    <mat-carousel 
+        timings="250ms ease-in"
+        [autoplay]="true"
+        [loop]="true"
+        color="accent"
+        [proportion]="56"
+        [hideIndicators]="false"
+        [useKeyboard]="true"
+        [useMouseWheel]="true"
+        orientation="ltr"
+        [pauseOnHover]="true">
+        <mat-carousel-slide
+        *ngFor="let movie of movies">
+            <app-image-display [goToSessions] = "movie.title" [imageUrl]="movie.horizontalImageUrl"></app-image-display>
+        </mat-carousel-slide>
+    </mat-carousel>
+</div>

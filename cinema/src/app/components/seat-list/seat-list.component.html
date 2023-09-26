@@ -1,0 +1,10 @@
+<ul>
+    <ng-container *ngFor="let row of seatsByRow | keyvalue">
+      <li>
+        <span>{{ formatSeats(row.key, row.value) }}</span> 
+        <span class="spacer"></span>
+        <span class="total-price">{{ calculateTotalPriceForOneRowSeats(row.value) }} UAH</span>
+      </li>
+    </ng-container>
+  </ul>
+  

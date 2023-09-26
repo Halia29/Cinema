@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="toolbar">
+    <div class="left">
+      <button color="primary" goHome mat-flat-button><mat-icon>home</mat-icon></button>
+    </div>
+    <div class="center">
+      <span>Cinema</span>
+    </div>
+    <div class="right">
+      <button color="primary"  mat-flat-button [matMenuTriggerFor]="userMenu" #menuTrigger>
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="goToMyTickets()" normalPurple14px>
+          <mat-icon>local_activity</mat-icon>
+          My Tickets
+        </button>
+        <div horizontal-separator></div>
+        <button mat-menu-item (click)="logOut()" normalPurple14px>
+          <mat-icon>logout</mat-icon>
+          Log Out
+        </button>
+      </mat-menu>
+    </div>
+</mat-toolbar>
+  

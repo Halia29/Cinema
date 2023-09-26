@@ -1,0 +1,14 @@
+mat-card {
+    margin: 30px auto auto auto;
+    width: 40%;
+}
+
+button {
+    width: 30%;
+    margin: 20px auto;
+}
+
+mat-card-title, mat-card-header {
+    padding: 5px;
+    margin: 0 auto;
+}

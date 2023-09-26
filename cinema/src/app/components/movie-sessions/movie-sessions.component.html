@@ -1,0 +1,13 @@
+<mat-tab-group>
+    <mat-tab *ngFor="let sessionDate of getSessionDates(movie.sessions)">
+        <ng-template mat-tab-label>{{ sessionDate | dateFormat }}</ng-template>
+        <mat-tab-group>
+            <mat-tab *ngFor="let session of movie.sessions[sessionDate]">
+                <ng-template mat-tab-label>{{session.startTime | timeFormat }} - {{ session.endTime | timeFormat }}</ng-template>
+                <seats-chart [session]="session"></seats-chart>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-tab>
+</mat-tab-group>
+  
+  

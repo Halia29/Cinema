@@ -1,0 +1,10 @@
+.title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center; 
+    font-weight: bold;
+    font-size: 20px;
+    color:rgba(103, 58, 183, 0.8);
+}

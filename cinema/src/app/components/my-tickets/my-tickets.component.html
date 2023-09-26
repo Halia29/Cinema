@@ -1,0 +1,19 @@
+<navigation-bar></navigation-bar>
+<div *ngIf = "tickets">
+    <ul *ngFor="let ticket of tickets">
+        <mat-card purpleShadow>
+            <mat-card-title boldPurple14px>{{ticket.title}}</mat-card-title>
+            <mat-card-header normalPurple14px>{{ticket.startDateAndTime | dateTimeFormat}} - {{ticket.endDateAndTime | dateTimeFormat}}</mat-card-header>
+            <div horizontal-separator></div>
+            <mat-card-content normalPurple14px>
+                <seat-list [seatsByRow]="ticket.seats | orderSeatsByRows"></seat-list>
+            </mat-card-content>
+        </mat-card>
+    </ul>
+</div>
+<div *ngIf = "!tickets">
+    <mat-card purpleShadow>
+        <mat-card-title normalPurple14px>Unfortunately, you haven't purchased any tickets so far :(</mat-card-title>
+        <button color="primary" mat-raised-button goHome>Choose movie!</button>
+    </mat-card>
+</div>

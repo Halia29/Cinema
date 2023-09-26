@@ -1,0 +1,26 @@
+mat-card{
+    margin: 30px auto -30px  auto;
+    width: 30%;
+    box-shadow: 4px 4px 6px 4px rgba(103, 58, 183, 0.2);
+}
+
+mat-card-title {
+    margin: 10px auto auto auto;
+}
+
+mat-card-header {
+    margin: 0 auto;
+}
+
+.to-right {
+    float: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+mat-form-field {
+    width: 95%;
+    font-size: 12px; 
+    padding: 4px 8px; 
+}
