@@ -13,9 +13,9 @@ import { TicketState } from 'src/app/states/ticket.state';
 })
 export class MyTicketsComponent implements OnInit{
   currentUserEmail: string;
-  tickets: Ticket[];
+  tickets: Ticket[] = [];
 
-  constructor(private store: Store<{ ticket: TicketState }>, private movieService: MovieService, private router: Router){}
+  constructor(private store: Store<{ ticket: TicketState }>, private movieService: MovieService){}
 
   ngOnInit(){
     this.store.select(state => state.ticket.ticket).subscribe(ticket => {

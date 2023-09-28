@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-payment-result',
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PaymentResultComponent implements OnInit {
   change: number;
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     const changeString = this.route.snapshot.paramMap.get('changeAmount');

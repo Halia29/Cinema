@@ -16,6 +16,13 @@ export class DateTimeFormatPipe implements PipeTransform {
       return 'Impossible to convert date';
     }
 
+    if(isNaN(inputDate.getDate()) 
+    || isNaN(inputDate.getMonth()) 
+    || isNaN(inputDate.getFullYear())
+    || isNaN(inputDate.getHours())
+    || isNaN(inputDate.getMinutes())){
+      return 'Impossible to convert date';
+    }
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const day = days[inputDate.getDay()];
 

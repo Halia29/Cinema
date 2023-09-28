@@ -14,9 +14,7 @@ import { TicketState } from 'src/app/states/ticket.state';
 export class MovieDescriptionComponent implements OnInit{
   movies: Movie[];
 
-  constructor(private movieService: MovieService, 
-    private router: Router, 
-    private store: Store<{ ticket: TicketState }>){}
+  constructor(private movieService: MovieService){}
 
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((movies: Movie[]) => {

@@ -8,13 +8,6 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-  constructor(
-    private router: Router,
-    private authService: AuthService){  
-  }
-
-  onLogOut() {
-    this.authService.logout();
-    this.router.navigate(['/login']);
+  constructor(){  
   }
 }

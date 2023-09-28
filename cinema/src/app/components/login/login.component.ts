@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 
 
-function passwordValidator(control: FormControl): { [s: string]: boolean } | null {
-  const hasLowercase = /[a-z]/.test(control.value);
-  const hasUppercase = /[A-Z]/.test(control.value);
-  const hasNumber = /[0-9]/.test(control.value);
-  if ((!hasLowercase || !hasUppercase || !hasNumber) && (control.value && control.value.trim() !== '')) {
+export function passwordValidator(control: FormControl): { [s: string]: boolean } | null {
+  const value = control.value.trim();
+  const hasLowercase = /[a-z]/.test(value);
+  const hasUppercase = /[A-Z]/.test(value);
+  const hasNumber = /[0-9]/.test(value);
+  if ((!hasLowercase || !hasUppercase || !hasNumber) && (value && value !== '')) {
     return { invalidPassword: true };
   }  
   return null;

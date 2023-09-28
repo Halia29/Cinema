@@ -25,7 +25,7 @@ export class SeatsChartComponent implements OnInit {
     private store: Store<{ ticket: TicketState }>){ }
 
   ngOnInit(){
-    this.seats = Array.from(new Set(this.session.seats.map(seat => seat.seat)));
+    this.seats = Array.from(new Set(this.session.seats.map(seat => seat.seat))); 
   }
 
   hasChosenSeat(row: number, seat: number): void{

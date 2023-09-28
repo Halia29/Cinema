@@ -10,8 +10,7 @@ import { Session } from 'src/app/models/session.model';
 export class MovieSessionsComponent {
   @Input() movie: Movie;
 
-  constructor(){ 
-  }
+  constructor(){}
 
   getSessionDates(sessions: { [date: string]: Session[] }): string[] {
     return Object.keys(sessions);

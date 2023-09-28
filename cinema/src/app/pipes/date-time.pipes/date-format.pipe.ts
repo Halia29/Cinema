@@ -14,6 +14,10 @@ export class DateFormatPipe implements PipeTransform {
     } else {
       return 'Impossible to convert date';
     }
+    
+    if(isNaN(inputDateObj.getDate()) || isNaN(inputDateObj.getMonth()) || isNaN(inputDateObj.getFullYear())){
+      return 'Impossible to convert date';
+    }
 
     const currentDate = new Date();
     
@@ -32,7 +36,7 @@ export class DateFormatPipe implements PipeTransform {
     } 
     else {
       const day = inputDateObj.getDate().toString().padStart(2, '0');
-      const month = (inputDateObj.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+      const month = (inputDateObj.getMonth() + 1).toString().padStart(2, '0');
       const year = inputDateObj.getFullYear();
       return `${day}.${month}.${year}`;
     }
